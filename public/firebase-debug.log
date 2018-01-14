@@ -1,0 +1,32 @@
+[debug] [2018-01-13T11:29:21.501Z] ----------------------------------------------------------------------
+[debug] [2018-01-13T11:29:21.506Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kyle Yap\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-01-13T11:29:21.506Z] CLI Version:   3.16.0
+[debug] [2018-01-13T11:29:21.506Z] Platform:      win32
+[debug] [2018-01-13T11:29:21.506Z] Node Version:  v9.4.0
+[debug] [2018-01-13T11:29:21.507Z] Time:          Sat Jan 13 2018 19:29:21 GMT+0800 (China Standard Time)
+[debug] [2018-01-13T11:29:21.507Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-13T11:29:21.532Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-13T11:29:21.533Z] > authorizing via signed-in user
+[debug] [2018-01-13T11:29:21.537Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/zywie-2b7c2  
+  
+ Sat Jan 13 2018 19:29:21 GMT+0800 (China Standard Time)
+[debug] [2018-01-13T11:29:24.957Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-13T11:29:24.957Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/zywie-2b7c2/tokens  
+  
+ Sat Jan 13 2018 19:29:24 GMT+0800 (China Standard Time)
+[debug] [2018-01-13T11:29:26.063Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Kyle Yap\Documents\4thYear\Zywie_webAdmin'...
+[info] 
+[debug] [2018-01-13T11:29:26.069Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/zywie-2b7c2  
+  
+ Sat Jan 13 2018 19:29:26 GMT+0800 (China Standard Time)
+[debug] [2018-01-13T11:29:28.681Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-13T11:29:28.686Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/758045763954/clients/_:getWebAppConfig  
+  
+ Sat Jan 13 2018 19:29:28 GMT+0800 (China Standard Time)
+[debug] [2018-01-13T11:29:29.790Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

@@ -40,6 +40,24 @@
 
 </head>
 <body class="hold-transition skin-black-light sidebar-mini">
+  <dialog class="mdl-dialog" id="deleteDialog">
+    <h4 class="mdl-dialog__title">Delete ingredient?</h4>
+    <div class="mdl-dialog__content">
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button agree-del">Agree</button>
+      <button type="button" class="mdl-button close-del">Disagree</button>
+    </div>
+  </dialog>
+  <dialog class="mdl-dialog" id="editDialog">
+    <h4 class="mdl-dialog__title">Delete ingredient?</h4>
+    <div class="mdl-dialog__content">
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button agree-edit">Agree</button>
+      <button type="button" class="mdl-button close-edit">Disagree</button>
+    </div>
+  </dialog>
 <div class="wrapper" id="security-wrapper">
 
   <header class="main-header">
@@ -132,7 +150,7 @@
                 <option>Sugar</option>
                 <option>Vegetable_A</option>
                 <option>Vegetable_B</option>
-                
+
               </select>
             <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -149,7 +167,8 @@
                     <thead>
                       <tr>
                         <th class="col-xs-2">#</th>
-                        <th class="col-xs-8">Food Item Name</th>
+                        <th class="col-xs-6">Food Item Name</th>
+                        <th class="col-xs-4"> </th>
                       </tr>
                     </thead>
                     <tbody id="display-table-item">
@@ -159,7 +178,7 @@
                   </table>
 
                 </div>
-              
+
             </div>
 
             <!-- /.row -->
@@ -172,7 +191,7 @@
         </div>
       </div>
 
-      
+
           <div class="col-md-4 container-fluid">
             <div class="box">
               <div class="box-header with-border">
@@ -184,7 +203,7 @@
               </div>
               <!-- /.box-header -->
                 <div class="box-body">
-                  
+
                       <div class="form-group">
                         <label for="food-item">Ingredient item</label>
                         <input type="text" class="form-control" id="food-item" placeholder="Ex: potato,apple,mango">
@@ -221,10 +240,10 @@
                         </ul>
                     </div>
                       <button id="submitBtn" onclick="submitClick()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Submit</button>
-                  
+
                 </div>
-              
-              
+
+
               </div>
               <!-- /.row -->
             </div>
@@ -241,11 +260,11 @@
     </div>
     </section>
     <!-- /.content -->
-    
+
   </div>
   <!-- /.content-wrapper -->
 
- 
+
 
 
   <!-- /.control-sidebar -->

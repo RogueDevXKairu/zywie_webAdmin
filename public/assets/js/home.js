@@ -16,6 +16,51 @@ var category = document.getElementById("category");
 
 firebaseQuery(category.innerHTML);
 
+$('body').on('click','#deletebutton',function(){
+  var dialog = document.querySelector('#deleteDialog');
+  dialog.showModal();
+  var value = $(this).val();
+  // Yes
+  dialog.querySelector('.agree-del').addEventListener('click', function nothing() {
+      firebasedatabase.child("food_exchange_list_tag").child(category.innerHTML).child(value).remove();
+      firebaseQuery(category.innerHTML);
+      alert("Successfully deleted "+value.toUpperCase()+".");
+      dialog.querySelector('.agree-del').removeEventListener('click',nothing,false);
+      dialog.close();
+  });
+  // No
+  dialog.querySelector('.close-del').addEventListener('click', function() {
+      dialog.close();
+  });
+});
+
+$('body').on('click','#editButton',function(){
+  var dialog = document.querySelector('#editDialog');
+  var value = $(this).val();
+  dialog.querySelector('.mdl-dialog__content').innerHTML = '<input type="text" class="form-control" id="edit-food-item" value="'+value+'">';
+  dialog.showModal();
+  var edit = dialog.querySelector('#edit-food-item').value;
+  // Yes
+  dialog.querySelector('.agree-edit').addEventListener('click', function nothing() {
+      var editnew = dialog.querySelector('#edit-food-item').value;
+      if(editnew!=""){
+        firebasedatabase.child("food_exchange_list_tag").child(category.innerHTML).child(edit).remove();
+        firebasedatabase.child("food_exchange_list_tag").child(category.innerHTML).child(editnew).set(true);
+        alert("Successfully edited");
+        dialog.querySelector('.agree-edit').removeEventListener('click',nothing,false);
+        dialog.close();
+      }else{
+        alert("Empty field");
+      }
+  });
+  // No edit
+  dialog.querySelector('.close-edit').addEventListener('click', function() {
+      dialog.close();
+  });
+});
+
+
+
 function firebaseQuery(category){
 	var cnt=0;
 	firebasedatabase.child("food_exchange_list_tag").child(category).on('value', function(snapshot){
@@ -23,9 +68,9 @@ function firebaseQuery(category){
 		cnt = 0;
 		snapshot.forEach(function(childSnapshot) {
 			cnt++;
-		    var childData = childSnapshot.val().toUpperCase();
-		    var row = "";
-		    row += '<tr><td class="col-xs-2">' + cnt + '</td><td class="col-xs-10">' + childData + '</td></tr>';
+		    var childData = childSnapshot.key.toUpperCase();
+        var row ="";
+		    row += '<tr><td class="col-xs-2">' + cnt + '</td><td class="col-xs-6 center-text">' + childData + '</td><td class="col-xs-2"><button id="editButton" value="'+ childData.toLowerCase() +'" class="mdl-button mdl-js-button mdl-button--colored">Edit</button></td><td class="col-xs-2"><button id="deletebutton" value="'+ childData.toLowerCase() +'" class="mdl-button mdl-js-button mdl-button--colored">Delete</button></td></tr>';
 		    var html = display_table_items.innerHTML + row;
 		    display_table_items.innerHTML = html;
 	  });
@@ -35,21 +80,18 @@ function firebaseQuery(category){
 	return cnt;
 }
 
-
-
 function submitClick(){
-	
+
 	if(document.getElementById('food-item').value != "" && document.getElementById("spinerAddInput").innerHTML != ""){
-		var num = firebaseQuery(document.getElementById("spinerAddInput").innerHTML);
 		firebasedatabase.child("food_exchange_list_tag").child(document.getElementById("spinerAddInput").innerHTML)
-		.child(num).set(document.getElementById('food-item').value);
+		.child(document.getElementById('food-item').value.toLowerCase()).set(true);
 		alert("Food list update success");
+    firebaseQuery(category.innerHTML);
 		document.getElementById('food-item').value = "";
 	}else{
 		alert("Please fill up all fields");
 	}
 }
-
 
 $("#btnSignOut").click(function(){
 	firebase.auth().signOut().then(function() {
@@ -68,8 +110,6 @@ $('#selectCat').on('change', function() {
   	firebaseQuery(this.value);
 })
 
-
-
 function filterTable() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("myInput");
@@ -84,6 +124,6 @@ function filterTable() {
       } else {
         tr[i].style.display = "none";
       }
-    }       
+    }
   }
 }

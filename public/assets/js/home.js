@@ -69,7 +69,7 @@ function firebaseQuery(category){
 		snapshot.forEach(function(childSnapshot) {
 			cnt++;
 		    var childData = childSnapshot.key.toUpperCase();
-        var row ="";
+            var row ="";
 		    row += '<tr><td class="col-xs-2">' + cnt + '</td><td class="col-xs-6 center-text">' + childData + '</td><td class="col-xs-2"><button id="editButton" value="'+ childData.toLowerCase() +'" class="mdl-button mdl-js-button mdl-button--colored">Edit</button></td><td class="col-xs-2"><button id="deletebutton" value="'+ childData.toLowerCase() +'" class="mdl-button mdl-js-button mdl-button--colored">Delete</button></td></tr>';
 		    var html = display_table_items.innerHTML + row;
 		    display_table_items.innerHTML = html;

@@ -1,0 +1,82 @@
+[debug] [2018-01-23T06:02:45.081Z] ----------------------------------------------------------------------
+[debug] [2018-01-23T06:02:45.090Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kyle Yap\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-01-23T06:02:45.091Z] CLI Version:   3.16.0
+[debug] [2018-01-23T06:02:45.091Z] Platform:      win32
+[debug] [2018-01-23T06:02:45.091Z] Node Version:  v9.4.0
+[debug] [2018-01-23T06:02:45.092Z] Time:          Tue Jan 23 2018 14:02:45 GMT+0800 (China Standard Time)
+[debug] [2018-01-23T06:02:45.092Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-23T06:02:45.240Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-23T06:02:45.243Z] > authorizing via signed-in user
+[debug] [2018-01-23T06:02:45.254Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-23T06:02:45.256Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/-pPkCESJ9U0ckDRp7CWzu6QY2F2GYOeoFT26nTqFuw0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue Jan 23 2018 14:02:45 GMT+0800 (China Standard Time)
+[debug] [2018-01-23T06:02:46.957Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-23T06:02:46.966Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/zywie-2b7c2  
+  
+ Tue Jan 23 2018 14:02:46 GMT+0800 (China Standard Time)
+[debug] [2018-01-23T06:02:49.758Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-23T06:02:49.761Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/zywie-2b7c2/tokens  
+  
+ Tue Jan 23 2018 14:02:49 GMT+0800 (China Standard Time)
+[debug] [2018-01-23T06:02:51.196Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Kyle Yap\Documents\4thYear\Zywie_webAdmin'...
+[info] 
+[debug] [2018-01-23T06:02:51.210Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/zywie-2b7c2  
+  
+ Tue Jan 23 2018 14:02:51 GMT+0800 (China Standard Time)
+[debug] [2018-01-23T06:02:58.684Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-23T06:02:58.690Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/758045763954/clients/_:getWebAppConfig  
+  
+ Tue Jan 23 2018 14:02:58 GMT+0800 (China Standard Time)
+[debug] [2018-01-23T06:03:00.546Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-01-25T16:18:29.248Z] ----------------------------------------------------------------------
+[debug] [2018-01-25T16:18:29.254Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kyle Yap\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-01-25T16:18:29.254Z] CLI Version:   3.16.0
+[debug] [2018-01-25T16:18:29.254Z] Platform:      win32
+[debug] [2018-01-25T16:18:29.254Z] Node Version:  v9.4.0
+[debug] [2018-01-25T16:18:29.255Z] Time:          Fri Jan 26 2018 00:18:29 GMT+0800 (China Standard Time)
+[debug] [2018-01-25T16:18:29.255Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-25T16:18:29.319Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-25T16:18:29.321Z] > authorizing via signed-in user
+[debug] [2018-01-25T16:18:29.326Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-25T16:18:29.326Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/-pPkCESJ9U0ckDRp7CWzu6QY2F2GYOeoFT26nTqFuw0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Jan 26 2018 00:18:29 GMT+0800 (China Standard Time)
+[debug] [2018-01-25T16:18:29.830Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-25T16:18:29.851Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/zywie-2b7c2  
+  
+ Fri Jan 26 2018 00:18:29 GMT+0800 (China Standard Time)
+[debug] [2018-01-25T16:18:31.283Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-25T16:18:31.285Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/zywie-2b7c2/tokens  
+  
+ Fri Jan 26 2018 00:18:31 GMT+0800 (China Standard Time)
+[debug] [2018-01-25T16:18:32.378Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Kyle Yap\Documents\4thYear\Zywie_webAdmin'...
+[info] 
+[debug] [2018-01-25T16:18:32.385Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/zywie-2b7c2  
+  
+ Fri Jan 26 2018 00:18:32 GMT+0800 (China Standard Time)
+[debug] [2018-01-25T16:18:34.681Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-25T16:18:34.686Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/758045763954/clients/_:getWebAppConfig  
+  
+ Fri Jan 26 2018 00:18:34 GMT+0800 (China Standard Time)
+[debug] [2018-01-25T16:18:35.689Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

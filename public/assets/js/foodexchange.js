@@ -28,17 +28,20 @@ firebasedatabase.child("food_exchange").on('value', function(snapshot){
 $('body').on('click','#editButton',function(){
     var dialog = document.querySelector('#editDialog');
     var value = $(this).val();
-    var valuekey = $(this).attr("value-key");
+    var keyValue = $(this).attr("value-key");
     var energy = $(this).attr("category");
-    dialog.querySelector('.mdl-dialog__content').innerHTML = '<input type="text" class="form-control" id="edit-food-item" value="'+value+'">';
+    dialog.querySelector('.mdl-dialog__content').innerHTML = '<input type="number" min="0" pattern="^(?:[1-9]\\d*|0)?(?:\\.\\d+)?$" class="form-control" id="edit-food-item" value="'+value+'">';
     dialog.showModal();
     // Yes
     dialog.querySelector('.agree-edit').addEventListener('click', function nothing() {
         var editnew = dialog.querySelector('#edit-food-item').value;
+        var convertedData = parseFloat(editnew);
         if(editnew!=""){
             if(editnew>=0){
-                firebasedatabase.child("food_exchange").child(energy).child(valuekey).remove();
-                firebasedatabase.child("food_exchange").child(energy).child(valuekey).set(editnew);
+                var toFloat = parseFloat(editnew);
+                var dataEdit={}
+                dataEdit[keyValue] = toFloat;
+                firebasedatabase.child("food_exchange").child(energy).update(dataEdit);
                 alert("Successfully edited");
                 dialog.querySelector('.agree-edit').removeEventListener('click',nothing,false);
                 dialog.close();
@@ -46,7 +49,7 @@ $('body').on('click','#editButton',function(){
                 alert("Value must not be less than zero!");
             }
         }else{
-            alert("Empty field");
+            alert("Error in the fields. Please make sure it is not empty or the value is a correct float type!");
         }
     });
     // No edit
@@ -114,15 +117,15 @@ function submitClick() {
     if(totalenergy != "" && fat!= "" && fruit!= "" && meat_low!= "" && meat_med!= "" && milk!= "" && rice!= "" && sugar!= "" && vega!= "" && vegb!= ""){
         if(totalenergy>700){
              firebasedatabase.child("food_exchange").child(totalenergy).set({
-                "Fat": fat,
-                "Fruit": fruit,
-                "Meat_Low_fat": meat_low,
-                "Meat_Med_fat": meat_med,
-                "Milk": milk,
-                "Rice": rice,
-                "Sugar": sugar,
-                "Vegetable_A": vega,
-                "Vegetable_B": vegb
+                "Fat": parseFloat(fat),
+                "Fruit": parseFloat(fruit),
+                "Meat_Low_fat": parseFloat(meat_low),
+                "Meat_Med_fat": parseFloat(meat_med),
+                "Milk": parseFloat(milk),
+                "Rice": parseFloat(rice),
+                "Sugar": parseFloat(sugar),
+                "Vegetable_A": parseFloat(vega),
+                "Vegetable_B": parseFloat(vegb)
             });
             alert("Successfully created a new meal plan.");
         }else{

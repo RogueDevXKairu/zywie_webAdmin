@@ -100,12 +100,12 @@
           </a>
         </li>
 
-        <li class="active">
-          <a href="#">
+        <li>
+          <a href="foodexchange.html">
             <i class="fa fa-calendar"></i> <span>Food Exchange Energy</span>
           </a>
         </li>
-        <li><a href="notification.html"><i class="fa fa-book"></i> <span>Notification</span></a></li>
+        <li class="active"><a href="#"><i class="fa fa-book"></i> <span>Notification</span></a></li>
         <li><a href="#" id="btnSignOut"><i class="glyphicon glyphicon-off"></i> <span>Log Out</span></a></li>
       </ul>
     </section>
@@ -123,111 +123,40 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content container-fluid">
       <!-- Info boxes -->
-      <div class="row">
       <!-- /.row -->
-      <div class="col-md-8 container-fluid">
-        <div class="box box-default">
-          <div class="box-header with-border">
-            <h3 class="box-title" id="numItems"></h3>
-            <div class="mdl-textfield mdl-js-textfield" style="margin-left: 2%;">
-              <input class="mdl-textfield__input" type="text" id="myInput" onkeyup="filterTable()">
-              <label class="mdl-textfield__label">Search food item here...</label>
-            </div>
-            <div class="row">
-              <h3 class="col-sm-4" id="category" energy-value=""></h3>
-              <button id="delEnergy" onclick="deleteEnergy()" class="col-sm-4 mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Delete Plan</button>
-            </div>
-              <select class="form-control" id="selectCat">
-              </select>
-            <div class="box-tools pull-right">
-              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            </div>
-          </div>
-          <!-- /.box-header -->
-
-          <div class="box-body">
-
-            <div class="row">
-
-              <div class="col-md-12">
-                  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp table-fixed" style="width: 100%" id="food-table">
-                    <thead>
-                      <tr>
-                        <th class="col-xs-6">Food Categories</th>
-                        <th class="col-xs-2">Energy</th>
-                        <th class="col-xs-4"> </th>
-                      </tr>
-                    </thead>
-                    <tbody id="display-table-item">
-
-                    </tbody>
-
-                  </table>
-
-                </div>
-
-            </div>
-
-            <!-- /.row -->
-          </div>
-
-          <div class="box-footer">
-              <div id="loadingSpiner" class="mdl-spinner mdl-js-spinner is-active" style="position: relative; left: 48%;"></div>
-          </div>
-          <!-- /.box-body -->
-        </div>
-      </div>
-
-
-          <div class="col-md-4 container-fluid">
-            <div class="box">
-              <div class="box-header with-border">
-                <h3 class="box-title">Add a New Meal Plan</h3>
-
-                <div class="box-tools">
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                  </button>
+      <div class="row center-block">
+        <div class="col-sm-6">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title" id="numItems">SEND CUSTOM NOTIFICATION</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
               </div>
-              <!-- /.box-header -->
-                <div class="box-body">
+            </div>
+            <!-- /.box-header -->
 
-                  <div class="form-group">
-                    <label for="food-item">Total Energy (KCal)</label>
-                    <input type="number" required class="form-control" min="700" id="food-item" placeholder="Ex: 1000">
-                  </div>
-                  <div class="row">
-                  <div class="col-sm-6">Fat</div><div class="col-sm-4"><input type="number" required class="form-control" min="0" id="food-item-fat" placeholder="kcal"></div>
-                  <br>
-                  <div class="col-sm-6">Fruit</div><div class="col-sm-4"><input type="number" required class="form-control" min="0" id="food-item-fruit" placeholder="kcal"></div>
-                  <br>
-                  <div class="col-sm-6">Meat_Low_fat</div><div class="col-sm-4"><input type="number" required class="form-control" min="0" id="food-item-meat-low" placeholder="kcal"></div>
-                  <br>
-                  <div class="col-sm-6">Meat_Med_fat</div><div class="col-sm-4"><input type="number" required class="form-control" min="0" id="food-item-meat-med" placeholder="kcal"></div>
-                  <br>
-                  <div class="col-sm-6">Milk</div><div class="col-sm-4"><input type="number" required class="form-control" min="0" id="food-item-milk" placeholder="kcal"></div>
-                  <br>
-                  <div class="col-sm-6">Rice</div><div class="col-sm-4"><input type="number" required class="form-control" min="0" id="food-item-rice" placeholder="kcal"></div>
-                  <br>
-                  <div class="col-sm-6">Sugar</div><div class="col-sm-4"><input type="number" required class="form-control" min="0" id="food-item-sugar" placeholder="kcal"></div>
-                  <br>
-                  <div class="col-sm-6">Vegetable_A</div><div class="col-sm-4"><input type="number" required class="form-control" min="0" id="food-item-vega" placeholder="kcal"></div>
-                  <br>
-                  <div class="col-sm-6">Vegetable_B</div><div class="col-sm-4"><input type="number" required class="form-control" min="0" id="food-item-vegb" placeholder="kcal"></div>
-                  </div>
-                  <button id="submitBtn" onclick="submitClick()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Submit</button>
+            <div class="box-body container-fluid">
 
-                </div>
-
-
-              </div>
+              <form>
+                <input class="form-control mdl-textfield__input" id="notif-title" type="text" required placeholder="Title">
+                <br>
+                <textarea class="mdl-textfield__input" type="text" id="notif-description" rows= "3" required placeholder="Description"></textarea>
+                <br>
+                <button class="btn center-block" onclick="pushNotification()">Push notification</button>
+              </form>
               <!-- /.row -->
             </div>
-            <!-- /.box-footer -->
-           </div>
-          <!-- /.box -->
+
+            <div class="box-footer">
+                <div id="loadingSpiner" class="mdl-spinner mdl-js-spinner is-active" style="position: relative; left: 48%;"></div>
+            </div>
+            <!-- /.box-body -->
+          </div>
         </div>
+      </div>
+          <!-- /.box -->
         <!-- /.col -->
     </section>
   </div>
@@ -241,7 +170,7 @@
 <!-- Firebase keys -->
 <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
 <script type="text/javascript" src="../assets/js/service.js"></script>
-<script type="text/javascript" src="../assets/js/foodexchange.js"></script>
+<script type="text/javascript" src="../assets/js/notification.js"></script>
 
 
 <!-- Bootstrap 3.3.7 -->

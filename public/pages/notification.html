@@ -139,18 +139,24 @@
 
             <div class="box-body container-fluid">
 
-              <form>
-                <input class="form-control mdl-textfield__input" id="notif-title" type="text" required placeholder="Title">
-                <br>
-                <textarea class="mdl-textfield__input" type="text" id="notif-description" rows= "3" required placeholder="Description"></textarea>
-                <br>
-                <button class="btn center-block" onclick="pushNotification()">Push notification</button>
-              </form>
+              <div class="row">
+                <div class="col-md-12">
+                  <input class="form-control mdl-textfield__input" id="notif-title" required type="text"  placeholder="Title">
+                  <br>
+                  <textarea class="mdl-textfield__input" type="text" id="notif-description"  required rows= "3"  placeholder="Description"></textarea>
+                  <br>
+                  <button class="btn center-block" onclick="pushNotification()">Push notification</button>
+                </div>
+              </div>
               <!-- /.row -->
             </div>
 
             <div class="box-footer">
-                <div id="loadingSpiner" class="mdl-spinner mdl-js-spinner is-active" style="position: relative; left: 48%;"></div>
+              <div class="row">
+                <div class="col-md-12 text-center">
+                    <div id="loadingSpiner" class="mdl-spinner mdl-js-spinner is-active"></div>
+                </div>
+              </div>
             </div>
             <!-- /.box-body -->
           </div>

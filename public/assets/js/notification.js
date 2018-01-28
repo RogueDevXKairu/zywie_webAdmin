@@ -13,10 +13,11 @@ function pushNotification() {
         document.getElementById('loadingSpiner').style.display = 'block';
         var json = {
             "to": "/topics/logged_users",
-            "notification": {
+            "data": {
               "title": title.value,
-              "body": description.value
-            }
+              "desc": description.value
+            },
+            "time_to_live" : 259200
           };
        
           $.ajax({
@@ -25,7 +26,7 @@ function pushNotification() {
            processData : false,
            beforeSend: function (xhr) {
              xhr.setRequestHeader('Content-Type', 'application/json');
-             xhr.setRequestHeader('Authorization', 'key=' + 'AIzaSyATWCd5Xv6LmePoQI_yiPco_pzDIdEuz4A');
+             xhr.setRequestHeader('Authorization', 'key=' + 'AAAAsH8MaXI:APA91bESFUHg1RPaKsA8BNY6F4TxRnQvskRQNlLoYvKXvcIf3G84Kkm7bPHNRBfbc718QgMQdWgYqBx2dlyyWc8P-yI9d5JvK9kLrSAHJykB_CpInwxewgfer9SQg6SsZW2xJ7rr6MQD');
            },
            data: JSON.stringify(json),
            success: function () {
@@ -43,3 +44,11 @@ function pushNotification() {
     }
     
 }
+
+$("#btnSignOut").click(function(){
+	firebase.auth().signOut().then(function() {
+ 		window.location="/login.html";
+	}).catch(function(error) {
+	  	alert(error.message);
+	});
+});

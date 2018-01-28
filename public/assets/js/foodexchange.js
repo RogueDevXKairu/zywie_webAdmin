@@ -155,3 +155,10 @@ function filterTable() {
     }
 }
 
+$("#btnSignOut").click(function(){
+	firebase.auth().signOut().then(function() {
+ 		window.location="/login.html";
+	}).catch(function(error) {
+	  	alert(error.message);
+	});
+});

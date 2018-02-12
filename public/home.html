@@ -40,6 +40,21 @@
 
 </head>
 <body class="hold-transition skin-black-light sidebar-mini">
+  <dialog class="mdl-dialog" id="filipinoAlt">
+    <h4 class="mdl-dialog__title">Edit Filipino Alternative Name</h4>
+    <div class="mdl-dialog__content">
+      <div id="filipino-field">
+      </div>
+      <br>
+      <hr>
+      <p>Note: Upon clicking AGREE when the field is empty will delete the alternative name.</p>
+    </div>
+
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button agree-filipino">Agree</button>
+      <button type="button" class="mdl-button close-filipino">Disagree</button>
+    </div>
+  </dialog>
   <dialog class="mdl-dialog" id="deleteDialog">
     <h4 class="mdl-dialog__title">Delete ingredient?</h4>
     <div class="mdl-dialog__content">
@@ -83,13 +98,10 @@
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="user-panel">
-        <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <div class="text-center image">
+            <b>Admin Zywie</b>
+          </div>
         </div>
-        <div class="pull-left info">
-          <p>Admin</p>
-        </div>
-      </div>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -163,8 +175,8 @@
                     <thead>
                       <tr>
                         <th class="col-xs-2">#</th>
-                        <th class="col-xs-6">Food Item Name</th>
-                        <th class="col-xs-4"> </th>
+                        <th class="col-xs-4">Food Item Name</th>
+                        <th class="col-xs-6"> </th>
                       </tr>
                     </thead>
                     <tbody id="display-table-item">
@@ -206,7 +218,7 @@
 
                       <div class="form-group">
                         <label for="food-item">Ingredient item</label>
-                        <input type="text" class="form-control" id="food-item" placeholder="Ex: potato,apple,mango">
+                        <input type="text" class="form-control" id="food-item" placeholder="Ex: potato">
                       </div>
                       <!-- <div class="form-group">
                         <label for="food-item-spiner">Food Exchange Category</label>

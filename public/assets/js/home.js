@@ -59,6 +59,70 @@ $('body').on('click','#editButton',function(){
   });
 });
 
+//Edit Filipino name
+$('body').on('click','#editFilipinoButton',function(){
+  var dialog = document.querySelector('#filipinoAlt');
+  var value = $(this).val();
+  // dialog.querySelector('.mdl-dialog__content').innerHTML = '<label>Alternative Name 1</label><input type="text" class="form-control" id="edit-food-item" value="'+value+'"><br><label>Alternative Name 2</label><input type="text" class="form-control" id="edit-food-item" value="'+value+'">';
+  firebasedatabase.child("alternative_food_name").child(value).once('value', function(snapshot){
+    var alternative_name = new Array();
+    snapshot.forEach(function(childSnapshot) {
+      alternative_name.push(childSnapshot.key.toUpperCase());
+    });
+    alternative_name.reverse();
+    var name1 = (alternative_name[0]!=null) ? alternative_name[0] : "";
+    var name2 = (alternative_name[1]!=null) ? alternative_name[1] : "";
+    dialog.querySelector('.mdl-dialog__content #filipino-field').innerHTML = '<label>Filipino Alternative Name 1</label><input type="text" class="form-control" id="first-food-name" placeholder="1st Name (Optional)" value="'+name1+'"><br><label>Filipino Alternative Name 2</label><input type="text" class="form-control" id="second-food-name" placeholder="2nd Name (Optional)" value="'+name2+'">';
+    var editName1 = dialog.querySelector('#first-food-name').value.toLowerCase();
+    var editName2 = dialog.querySelector('#second-food-name').value.toLowerCase();
+    // Yes
+    dialog.querySelector('.agree-filipino').addEventListener('click', function nothing() {
+        var editnewName1 = dialog.querySelector('#first-food-name').value;
+        var editnewName2 = dialog.querySelector('#second-food-name').value;
+
+        //first name
+        if(editnewName1!=""){
+          if(editName1!=""){
+            firebasedatabase.child("alternative_food_name").child(value).child(editName1).remove();
+          }
+          firebasedatabase.child("alternative_food_name").child(value).child(editnewName1.toLowerCase()).set(true);
+          alert('Successfully saved "'+editnewName1.toUpperCase()+'" as 1st alternative');
+        }else{
+          if(editName1!=""){
+            firebasedatabase.child("alternative_food_name").child(value).child(editName1).remove();
+            alert('Successfully deleted "'+editName1.toUpperCase()+'" as 1st alternative');
+          }
+        }
+        dialog.querySelector('.agree-filipino').removeEventListener('click',nothing,false);
+
+        //second name
+        if(editnewName2!=""){
+          if(editName2!=""){
+            firebasedatabase.child("alternative_food_name").child(value).child(editName2).remove();
+          }
+          firebasedatabase.child("alternative_food_name").child(value).child(editnewName2.toLowerCase()).set(true);
+          alert('Successfully saved "'+editnewName2.toUpperCase()+'" as 2nd alternative');
+        }else{
+          if(editName2!=""){
+            firebasedatabase.child("alternative_food_name").child(value).child(editName2).remove();
+            alert('Successfully deleted "'+editName1.toUpperCase()+'" as 2nd alternative');
+          }
+        }
+
+
+        dialog.close();
+        firebasedatabase.off();
+        dialog.querySelector('.agree-filipino').removeEventListener('click',nothing,false);
+    });
+  });
+  dialog.showModal();
+
+
+  // No edit
+  dialog.querySelector('.close-filipino').addEventListener('click', function() {
+      dialog.close();
+  });
+});
 
 
 function firebaseQuery(category){
@@ -70,7 +134,7 @@ function firebaseQuery(category){
 			cnt++;
 		    var childData = childSnapshot.key.toUpperCase();
             var row ="";
-		    row += '<tr><td class="col-xs-2">' + cnt + '</td><td class="col-xs-6 center-text">' + childData + '</td><td class="col-xs-2"><button id="editButton" value="'+ childData.toLowerCase() +'" class="mdl-button mdl-js-button mdl-button--colored">Edit</button></td><td class="col-xs-2"><button id="deletebutton" value="'+ childData.toLowerCase() +'" class="mdl-button mdl-js-button mdl-button--colored">Delete</button></td></tr>';
+		    row += '<tr><td class="col-xs-2">' + cnt + '</td><td class="col-xs-6 center-text">' + childData + '</td><td class="col-xs-4"><div class="row"><button id="editFilipinoButton" value="'+ childData.toLowerCase() +'" class="mdl-button mdl-js-button mdl-button--colored">Filipino Name</button><button id="editButton" value="'+ childData.toLowerCase() +'" class="mdl-button mdl-js-button mdl-button--colored">Edit</button><button id="deletebutton" value="'+ childData.toLowerCase() +'" class="mdl-button mdl-js-button mdl-button--colored">Delete</button></div></td></tr>';
 		    var html = display_table_items.innerHTML + row;
 		    display_table_items.innerHTML = html;
 	  });

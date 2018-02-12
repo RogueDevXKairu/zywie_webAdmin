@@ -1,0 +1,41 @@
+[debug] [2018-02-12T10:15:50.898Z] ----------------------------------------------------------------------
+[debug] [2018-02-12T10:15:50.912Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kyle Yap\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-02-12T10:15:50.913Z] CLI Version:   3.17.4
+[debug] [2018-02-12T10:15:50.913Z] Platform:      win32
+[debug] [2018-02-12T10:15:50.913Z] Node Version:  v8.9.4
+[debug] [2018-02-12T10:15:50.915Z] Time:          Mon Feb 12 2018 18:15:50 GMT+0800 (China Standard Time)
+[debug] [2018-02-12T10:15:50.915Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-12T10:15:51.053Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-12T10:15:51.056Z] > authorizing via signed-in user
+[debug] [2018-02-12T10:15:51.063Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-12T10:15:51.064Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/-pPkCESJ9U0ckDRp7CWzu6QY2F2GYOeoFT26nTqFuw0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Feb 12 2018 18:15:51 GMT+0800 (China Standard Time)
+[debug] [2018-02-12T10:15:51.866Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-12T10:15:51.909Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/zywie-2b7c2  
+  
+ Mon Feb 12 2018 18:15:51 GMT+0800 (China Standard Time)
+[debug] [2018-02-12T10:15:53.349Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-12T10:15:53.353Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/zywie-2b7c2/tokens  
+  
+ Mon Feb 12 2018 18:15:53 GMT+0800 (China Standard Time)
+[debug] [2018-02-12T10:15:54.359Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Kyle Yap\Documents\4thYear\Zywie_webAdmin'...
+[info] 
+[debug] [2018-02-12T10:15:54.372Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/zywie-2b7c2  
+  
+ Mon Feb 12 2018 18:15:54 GMT+0800 (China Standard Time)
+[debug] [2018-02-12T10:15:56.945Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-12T10:15:56.946Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/758045763954/clients/_:getWebAppConfig  
+  
+ Mon Feb 12 2018 18:15:56 GMT+0800 (China Standard Time)
+[debug] [2018-02-12T10:15:58.822Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
